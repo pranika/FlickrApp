@@ -63,12 +63,7 @@ public class NetworkModule {
     @Provides
     @ApplicationScope
     public Picasso picassoWithCache(OkHttpClient client,Context context){
-
-        File httpCacheDirectory = new File(context.getCacheDir(), "picasso-cache");
-        Cache cache = new Cache(httpCacheDirectory, 15 * 1024 * 1024);
-
-        return  new Picasso.Builder(context).downloader(new OkHttp3Downloader(client)).build();
-
+        return new Picasso.Builder(context).downloader(new OkHttp3Downloader(client)).build();
     }
 
 

@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.squareup.leakcanary.RefWatcher;
 import com.squareup.picasso.Picasso;
 
 import org.greenrobot.eventbus.EventBus;
@@ -170,13 +171,14 @@ public class PhotoFragment extends Fragment  {
 
     @Override
     public void onDestroyView() {
+        super.onDestroyView();
 
         unbinder.unbind();
         PhotoAdapter.OnTouchEventListner onTouchEventListner=photoAdapter.returnTouchListner();
         onTouchEventListner=null;
         DisposableManager.dispose();
-        super.onDestroyView();
-
+        RefWatcher refWatcher = FlickrApplication.getRefWatcher(getActivity());
+        if (refWatcher != null) refWatcher.watch(this);
     }
 
     private void bindObservers() {

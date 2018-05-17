@@ -1,3 +1,4 @@
+// Adapter to bind pictures to fragment
 package flickr.yahoo.com.flickr.views;
 
 

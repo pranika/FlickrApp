@@ -1,3 +1,4 @@
+// Start Activity which loads fragment
 package flickr.yahoo.com.flickr.views;
 
 import android.arch.lifecycle.ViewModelProviders;
@@ -42,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
         photoViewModel = ViewModelProviders.of(this).get(PhotoViewModel.class);
         PhotoFragment photoFragment=new PhotoFragment();
         setFragment(photoFragment);
-        //loadMore();
     }
 
 

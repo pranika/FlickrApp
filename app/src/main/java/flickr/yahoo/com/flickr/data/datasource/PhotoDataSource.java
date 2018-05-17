@@ -1,3 +1,5 @@
+// PhotoDataSource is used to fetch data over the network api.
+
 package flickr.yahoo.com.flickr.data.datasource;
 
 
@@ -8,9 +10,6 @@ import com.squareup.moshi.JsonAdapter;
 import com.squareup.moshi.Moshi;
 
 import java.io.IOException;
-import java.util.List;
-
-import javax.inject.Inject;
 
 import flickr.yahoo.com.flickr.data.model.PhotoResponse;
 import flickr.yahoo.com.flickr.data.model.Photo;

@@ -1,3 +1,5 @@
+
+// Contract to persist data
 package flickr.yahoo.com.flickr.data.datastore;
 
 import java.util.List;

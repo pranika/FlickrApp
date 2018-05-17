@@ -1,3 +1,6 @@
+//PhotoRepository is the controller between PhotoDataStore and PhotoDataSource.
+// It decides whether the data should be fetched from cache or Network API.
+
 package flickr.yahoo.com.flickr.data.repository;
 
 import android.annotation.SuppressLint;
@@ -64,6 +67,7 @@ public class PhotoRepository implements PhotoRepositoryContract {
 
                 @Override
                 public void onError(Throwable e) {
+
                     emitter.onError(e);
                 }
 

@@ -1,3 +1,7 @@
+//Sharepreferences is used to persist data.
+// It is used as a cache to persist data where most recent posts loaded over  network are being persisted.
+
+
 package flickr.yahoo.com.flickr.data.datastore;
 
 

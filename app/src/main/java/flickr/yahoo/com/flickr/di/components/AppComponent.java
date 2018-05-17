@@ -19,8 +19,6 @@ import flickr.yahoo.com.flickr.views.ViewModels.PhotoViewModel;
 @Component(modules = {
         NetworkModule.class,
         SharedPreferencesModule.class,
-//        SharedPreferencesModule.class,
-      //  ApiModule.class,
         ServiceModule.class
 })
 public interface AppComponent {

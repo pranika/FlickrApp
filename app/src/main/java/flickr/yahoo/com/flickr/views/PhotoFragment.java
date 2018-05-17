@@ -23,6 +23,9 @@ import android.view.ViewGroup;
 
 import com.squareup.picasso.Picasso;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.List;
 
 import javax.inject.Inject;
@@ -75,6 +78,7 @@ public class PhotoFragment extends Fragment  {
         super.onCreate(savedInstanceState);
         ((FlickrApplication) getActivity().getApplication()).mDaggerComponent.inject(this);
 
+
     }
 
     @SuppressLint("ResourceAsColor")
@@ -82,6 +86,7 @@ public class PhotoFragment extends Fragment  {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootview = inflater.inflate(R.layout.fragment_photo, container, false);
+        EventBus.getDefault().register(this);
         bindButterKnife(rootview);
         networkError();
 
@@ -108,6 +113,15 @@ public class PhotoFragment extends Fragment  {
 
 
         return rootview;
+    }
+
+    @Subscribe
+    public void onEvent(NetworkMessageEvent networkMessageEvent){
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, networkMessageEvent.getCustomMessage(), Snackbar.LENGTH_LONG);
+
+        snackbar.show();
+
     }
 
     void networkError(){
@@ -167,12 +181,12 @@ public class PhotoFragment extends Fragment  {
 
     private void bindObservers() {
         photoViewModel.getAllPhotos().observe(this, photos -> {
-            networkError();
+
             photoAdapter.updateImages(photos);
         });
 
         photoViewModel.isLoading().observe(this, isLoading -> {
-            networkError();
+
             if (isLoading) {
                 setSwipeColourScheme();
                 swipeRefreshLayout.setRefreshing(true);
@@ -183,7 +197,7 @@ public class PhotoFragment extends Fragment  {
 
         photoViewModel.hasMoreDataValues().observe(this, hasMore -> {
 
-            networkError();
+
 
             photoAdapter.setHasMoreData(hasMore);
         });

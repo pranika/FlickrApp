@@ -24,7 +24,7 @@ import flickr.yahoo.com.flickr.data.model.Photo;
 
 import static android.content.Context.MODE_PRIVATE;
 
-public class SharedPreferencesDataStore implements PhotoDataStore {
+public class PhotoDataStoreSharedPreferencesImpl implements PhotoDataStore {
 
     private static final String PHOTOS_KEY = "photos";
     private static final String PREFERENCE_NAME = "DataStore";
@@ -34,7 +34,7 @@ public class SharedPreferencesDataStore implements PhotoDataStore {
 
     JsonAdapter<List<Photo>> adapter;
 
-    public SharedPreferencesDataStore(Moshi moshi,Context context) {
+    public PhotoDataStoreSharedPreferencesImpl(Moshi moshi, Context context) {
         this.moshi=moshi;
         this.context=context;
         Type type = Types.newParameterizedType(List.class, Photo.class);

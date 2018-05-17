@@ -3,9 +3,6 @@ package flickr.yahoo.com.flickr.di.components;
 
 
 import dagger.Component;
-import flickr.yahoo.com.flickr.data.datasource.PhotoDataSource;
-import flickr.yahoo.com.flickr.data.datastore.SharedPreferencesDataStore;
-import flickr.yahoo.com.flickr.data.repository.PhotoRepository;
 import flickr.yahoo.com.flickr.di.modules.NetworkModule;
 import flickr.yahoo.com.flickr.di.modules.ServiceModule;
 import flickr.yahoo.com.flickr.di.modules.SharedPreferencesModule;

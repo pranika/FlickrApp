@@ -19,7 +19,7 @@ import okhttp3.Callback;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 
-public class PhotoDataSource implements PhotoContract {
+public class PhotoDataSourceImpl implements PhotoContract {
 
     OkHttpClient client;
 
@@ -27,7 +27,7 @@ public class PhotoDataSource implements PhotoContract {
     JsonAdapter<PhotoResponse> photoResponseAdapter;
 
 
-    public PhotoDataSource(String apiKey, OkHttpClient client) {
+    public PhotoDataSourceImpl(String apiKey, OkHttpClient client) {
         this.apiKey = apiKey;
         this.client = client;
         Moshi moshi = new Moshi.Builder().build();

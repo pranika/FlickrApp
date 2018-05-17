@@ -37,11 +37,10 @@ dependencies {
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
-    // sockets library
-    compile 'com.neovisionaries:nv-websocket-client:2.3'
-
-    // Status Bar
-    compile 'com.jaeger.statusbarutil:library:1.5.1'
+//
+//
+//    // Status Bar
+//    compile 'com.jaeger.statusbarutil:library:1.5.1'
 
     // OkHttp
     compile 'com.squareup.okhttp3:okhttp:3.9.0'
@@ -51,9 +50,6 @@ dependencies {
     debugCompile 'com.readystatesoftware.chuck:library:1.1.0'
     releaseCompile 'com.readystatesoftware.chuck:library-no-op:1.1.0'
 
-    // Retrofit
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
 
     // Moshi
     compile 'com.squareup.moshi:moshi:1.5.0'
@@ -70,15 +66,10 @@ dependencies {
     // Logging
     compile 'com.jakewharton.timber:timber:4.5.1'
 
-    //compile 'com.squareup.picasso:picasso:2.5.2'
-    //compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.0.2'
-
     // Dagger
     compile 'com.google.dagger:dagger:2.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.12'
-    //Dagger
-//    compile 'com.google.dagger:dagger:2.8'
-//    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
+
 
     // Dagger Classes
     compile 'com.google.dagger:dagger-android:2.12'
@@ -89,29 +80,14 @@ dependencies {
 
     // RxJs
     compile 'io.reactivex.rxjava2:rxandroid:2.0.2'
-    // RxBinding
-//    compile 'com.jakewharton.rxbinding2:rxbinding:2.1.1'
-    // Because RxAndroid releases are few and far between, it is recommended you also
-    // explicitly depend on RxJava's latest version for bug fixes and new features.
     compile 'io.reactivex.rxjava2:rxjava:2.1.13'
 
-    // Maps
-    compile 'com.google.maps.android:android-maps-utils:0.4.4'
-
-
-    // Slider View Lib
-    compile 'com.sothree.slidinguppanel:library:3.4.0'
-
-    // Swipe Button
-    compile 'com.shitij.goyal:slide-button:1.0.0'
-
-    // Pin Entry Test Edit Lib
-    compile 'com.alimuzaffar.lib:pinentryedittext:1.3.1'
 
     //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
-//    compile 'com.squareup.picasso:picasso:2.5.2'
+    //EventBus
+    compile 'org.greenrobot:eventbus:3.1.1'
 
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
